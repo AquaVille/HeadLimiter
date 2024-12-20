@@ -6,7 +6,7 @@
 
     <groupId>dev.j3fftw.headlimiter</groupId>
     <artifactId>HeadLimiter</artifactId>
-    <version>UNOFFICIAL</version>
+    <version>AQUAVILLE</version>
     <packaging>jar</packaging>
 
     <name>HeadLimiter</name>
@@ -18,7 +18,7 @@
 
     <build>
         <defaultGoal>clean package</defaultGoal>
-        <finalName>${project.artifactId}</finalName>
+        <finalName>${project.artifactId}-${project.version}</finalName>
         <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
 
         <resources>
