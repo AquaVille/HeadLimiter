@@ -54,11 +54,11 @@ public final class HeadLimiter extends JavaPlugin implements Listener {
     }
 
     public boolean isCargo(SlimefunItem sfItem) {
-        return sfItem.isItem(SlimefunItems.CARGO_INPUT_NODE)
-            || sfItem.isItem(SlimefunItems.CARGO_OUTPUT_NODE)
-            || sfItem.isItem(SlimefunItems.CARGO_OUTPUT_NODE_2)
-            || sfItem.isItem(SlimefunItems.CARGO_CONNECTOR_NODE)
-            || sfItem.isItem(SlimefunItems.CARGO_MANAGER);
+        return sfItem.isItem(SlimefunItems.CARGO_INPUT_NODE.item())
+            || sfItem.isItem(SlimefunItems.CARGO_OUTPUT_NODE.item())
+            || sfItem.isItem(SlimefunItems.CARGO_OUTPUT_NODE_2.item())
+            || sfItem.isItem(SlimefunItems.CARGO_CONNECTOR_NODE.item())
+            || sfItem.isItem(SlimefunItems.CARGO_MANAGER.item());
     }
 
     @EventHandler(priority = EventPriority.MONITOR)
