@@ -49,32 +49,6 @@
                     <target>16</target>
                 </configuration>
             </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.6.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                    </execution>
-                </executions>
-
-                <configuration>
-                    <relocations>
-                        <relocation>
-                            <pattern>org.bstats</pattern>
-                            <shadedPattern>dev.j3fftw.headlimiter.bstats</shadedPattern>
-                        </relocation>
-                        <relocation>
-                            <pattern>dev.j3fftw.extrautils</pattern>
-                            <shadedPattern>dev.j3fftw.headlimiter.extrautils</shadedPattern>
-                        </relocation>
-                    </relocations>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
@@ -111,26 +85,6 @@
             <version>RC-37</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/libs/Slimefun v4.9-UNOFFICIAL.jar</systemPath>
-        </dependency>
-
-        <dependency>
-            <groupId>com.github.Slimefun-Addon-Community</groupId>
-            <artifactId>extrautils</artifactId>
-            <version>cea1be6550</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.bstats</groupId>
-            <artifactId>bstats-bukkit</artifactId>
-            <version>3.0.0</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.github.TownyAdvanced</groupId>
-            <artifactId>Towny</artifactId>
-            <version>0.97.3.0</version>
-            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
