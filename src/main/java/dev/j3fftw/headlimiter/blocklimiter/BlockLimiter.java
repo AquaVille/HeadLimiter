@@ -32,7 +32,7 @@ public final class BlockLimiter {
     public BlockLimiter(@Nonnull HeadLimiter headLimiter) {
         Preconditions.checkArgument(instance == null, "Cannot create a new instance of the BlockLimiter");
         instance = this;
-        new BlockListener(headLimiter);
+        Bukkit.getPluginManager().registerEvents(new BlockListener(), HeadLimiter.getInstance());
         headLimiter.getServer().getScheduler().runTaskLater(headLimiter, this::loadBlockStorage, 1);
     }
 

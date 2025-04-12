@@ -11,13 +11,7 @@ import io.github.thebusybiscuit.slimefun4.api.events.SlimefunBlockPlaceEvent;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.blocks.ChunkPosition;
 
-import dev.j3fftw.headlimiter.HeadLimiter;
-
 public class BlockListener implements Listener {
-
-    public BlockListener(@Nonnull HeadLimiter headLimiter) {
-        headLimiter.getServer().getPluginManager().registerEvents(this, headLimiter);
-    }
 
     @EventHandler
     public void onSlimefunItemPlaced(@Nonnull SlimefunBlockPlaceEvent event) {
@@ -44,7 +38,7 @@ public class BlockListener implements Listener {
         } else {
             // Chunk has hit its limit for this type, time to deny the placement
             event.setCancelled(true);
-            event.getPlayer().sendMessage(ChatColor.RED + "You cannot place any more of this item within this chunk.");
+            event.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&l[!] &cPrekročil si maximálny limit pre tento typ predmetu v jednom chunku."));
         }
     }
 
