@@ -21,6 +21,8 @@
 ##      example_2: 100
 ##      example_3: 150
 
+message: "&c&l[!] &cPrekročil si maximálny limit pre tento typ predmetu v jednom chunku."
+
 block-limits:
   cargo:
     items-amount: 25

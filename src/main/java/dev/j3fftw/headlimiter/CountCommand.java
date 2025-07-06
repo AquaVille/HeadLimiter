@@ -14,8 +14,7 @@ public class CountCommand implements CommandExecutor {
     @Override
     @ParametersAreNonnullByDefault
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
-        if (args.length == 1 && sender instanceof Player) {
-            Player player = (Player) sender;
+        if (args.length == 1 && sender instanceof Player player) {
 
             Utils.count(player.getChunk(), result -> {
                 StringBuilder message = new StringBuilder();

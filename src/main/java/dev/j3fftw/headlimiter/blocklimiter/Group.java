@@ -12,8 +12,6 @@ import javax.annotation.Nonnull;
 
 import com.google.common.base.Objects;
 
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-
 public class Group {
 
     private final String groupName;
@@ -36,24 +34,8 @@ public class Group {
         }
     }
 
-    public String getGroupName() {
-        return groupName;
-    }
-
-    public int getDefaultAmount() {
-        return defaultAmount;
-    }
-
     public Set<String> getItems() {
         return items;
-    }
-
-    public Map<String, Integer> getPermissionAmounts() {
-        return permissionAmounts;
-    }
-
-    public boolean contains(@Nonnull SlimefunItem slimefunItem) {
-        return contains(slimefunItem.getId());
     }
 
     public boolean contains(@Nonnull String itemId) {

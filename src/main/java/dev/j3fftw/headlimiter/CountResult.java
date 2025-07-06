@@ -17,10 +17,6 @@ public class CountResult {
         return total;
     }
 
-    public int getCount(@Nonnull String id) {
-        return counts.getOrDefault(id, 0);
-    }
-
     @Nonnull
     public Map<String, Integer> getCounts() {
         return counts;

@@ -35,7 +35,7 @@ public final class Utils {
 
     private Utils() {}
 
-    protected static void loadPermissions() {
+    static void loadPermissions() {
         final ConfigurationSection permissionSection = HeadLimiter.getInstance().getConfig()
             .getConfigurationSection("permission");
         if (permissionSection != null) {

@@ -65,10 +65,6 @@ public final class BlockLimiter {
         return contentMap.get(chunkPosition);
     }
 
-    public Group getGroupByItem(@Nonnull SlimefunItem slimefunItem) {
-        return getGroupByItem(slimefunItem.getId());
-    }
-
     @Nullable
     public Group getGroupByItem(@Nonnull String itemId) {
         for (Group group : this.groups) {

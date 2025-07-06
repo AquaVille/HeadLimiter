@@ -1,6 +1,7 @@
 package dev.j3fftw.headlimiter;
 
 import java.io.File;
+import java.util.Objects;
 
 import dev.j3fftw.headlimiter.blocklimiter.Group;
 import org.bukkit.Material;
@@ -35,7 +36,7 @@ public final class HeadLimiter extends JavaPlugin implements Listener {
 
         getServer().getPluginManager().registerEvents(this, this);
 
-        getCommand("headlimiter").setExecutor(new CountCommand());
+        Objects.requireNonNull(getCommand("headlimiter")).setExecutor(new CountCommand());
 
         this.blockLimiter = new BlockLimiter(this);
         loadConfig();
@@ -90,7 +91,7 @@ public final class HeadLimiter extends JavaPlugin implements Listener {
             throw new IllegalStateException("No configuration for groups is available.");
         }
         for (String key : configurationSection.getKeys(false)) {
-            BlockLimiter.getInstance().getGroups().add(new Group(configurationSection.getConfigurationSection(key)));
+            BlockLimiter.getInstance().getGroups().add(new Group(Objects.requireNonNull(configurationSection.getConfigurationSection(key))));
         }
     }
 }

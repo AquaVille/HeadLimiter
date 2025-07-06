@@ -2,6 +2,7 @@ package dev.j3fftw.headlimiter.blocklimiter;
 
 import javax.annotation.Nonnull;
 
+import dev.j3fftw.headlimiter.HeadLimiter;
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -10,6 +11,8 @@ import io.github.thebusybiscuit.slimefun4.api.events.SlimefunBlockBreakEvent;
 import io.github.thebusybiscuit.slimefun4.api.events.SlimefunBlockPlaceEvent;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.blocks.ChunkPosition;
+
+import java.util.Objects;
 
 public class BlockListener implements Listener {
 
@@ -38,7 +41,8 @@ public class BlockListener implements Listener {
         } else {
             // Chunk has hit its limit for this type, time to deny the placement
             event.setCancelled(true);
-            event.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&l[!] &cPrekročil si maximálny limit pre tento typ predmetu v jednom chunku."));
+            String message = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(HeadLimiter.getInstance().getConfig().getString("message")));
+            event.getPlayer().sendMessage(message);
         }
     }
 
